@@ -1,7 +1,7 @@
 var http = require('http')
 module.exports = function(apiKey, city, callback){
   city = encodeURIComponent(city)
-    http.get({
+  http.get({
       host: 'api.openweathermap.org',
       path: `/data/2.5/forecast/?q=${city}&APPID=${apiKey}&units=imperial`
     }, function(response) {
