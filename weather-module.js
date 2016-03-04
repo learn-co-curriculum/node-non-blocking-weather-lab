@@ -12,7 +12,6 @@ module.exports = function(apiKey, city, callback){
         })
         response.on('end', function() {
           // Data reception is done, do whatever with it!
-          console.log(body);
           var parsed = JSON.parse(body)
           callback(null, body)
       })
