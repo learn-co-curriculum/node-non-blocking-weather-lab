@@ -2,7 +2,7 @@
 
 ## Objectives
 
-1. Implement a CLI app that makes request to a third-party service and which uses event emitters
+1. Implement a CLI app that makes request to a third-party service and yuses event emitters
 1. Describe how to work with OpenWeatherMaps API
 1. Get OpenWeatherMaps API key
 
@@ -10,9 +10,9 @@
 
 This is another task for NASA. You need to implement a CLI program which will give a weather forecast for a particular city. It's a CLI app because astronauts are not expected to know Node so they cannot modify the code and the computing resources are scarce so we cannot use a full-blown GUI environment. 
 
-In this lab, you will use the skills of creating modules, making an HTTP request, reading CLI arguments, working with observers (event emmiters) and OpenWeatherMaps API (to get the forecast).
+In this lab, you will create modules, make an HTTP request, read CLI arguments, work with observers (event emitters) and the OpenWeatherMaps API (to get the forecast).
 
-Bird's-eye view of what you'll need to create:
+Here's a bird's-eye view of what you'll need to create:
 
 * `config.json`: A file with an API key
 * `weather-module.js`: A module with a function that make a call based on the city name and provides the forecast as a JavaScript/Node object
@@ -22,12 +22,12 @@ Bird's-eye view of what you'll need to create:
 ## Instructions
 
 1. Register with [OpenWeatherMaps API](http://openweathermap.org/api) by going to their website and clicking "Sign up". 
-1. Once you signed up for the API, go to your home at <http://home.openweathermap.org>, locate your API key, copy it and paste/save into `config.json`. You must use your own key. Refrain using the key that's already in there or we will hunt you down and punish. 
-1. Create/open `weather-module.js` and implement a module which is providing a forecast. The function has three arguments: `apiKey`, `city`, and `callback`. The exact naming doesn't matter. We named them this way to convey the meaning. The purpose of this function is to take API key (step 2), city name and a callback function, make an HTTP request to OpenWeatherMaps (with the key), parse response body and invoke callback with the results when everything is done.
+1. Once you signed up for the API, go to your home at <http://home.openweathermap.org>, locate your API key, copy it and paste/save into `config.json`. 
+1. Create/open `weather-module.js` and implement a module that provides a forecast from OpenWeatherMaps. The purpose of this function is to take API key, city name and a callback function, make an HTTP request to OpenWeatherMaps, parse response body and invoke callback with the results when everything is done.
 1. Encode the city name to allow it to be use in the URL for the API request.
 1. Utilize `http.get` or `http.request` to request the data. The units must be imperial (F).
 1. You can look up the format of the forecast URL request at [OpenWeather forecast](http://openweathermap.org/forecast5).
-1. When you are ready to return the data, make sure it's parsed, i.e., is an object, not a string. Also, pass it as a second argument, because the first must be an `error` object (which is null if everything went okay).
+1. When you are ready to return the data, make sure it's in an object.
 1. Create/open `weather.js` which will be the CLI app runner. It will require our module, get the city name from the CLI input, get the API key from the JSON file and print the results into the terminal.
 1. Utilize this format for the output: `dt_text` (date and time as text), `main.temp` (temperature) and `F` (units). You will need to become familiar with the response structure first. Consult the API documentation or make a few test requests to see what is the results of those calls.
 
