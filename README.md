@@ -30,6 +30,7 @@ Here's a bird's-eye view of what you'll need to create:
 1. When you are ready to return the data, make sure it's in an object.
 1. Create/open `weather.js` which will be the CLI app runner. It will require our module, get the city name from the CLI input, get the API key from the JSON file and print the results into the terminal.
 1. Utilize this format for the output: `dt_text` (date and time as text), `main.temp` (temperature) and `F` (units). You will need to become familiar with the response structure first. Consult the API documentation or make a few test requests to see what is the results of those calls.
+2. Show an error "Please provide city" if the city is missing from a CLI command.
 
 In the end, these commands should work just fine:
 
